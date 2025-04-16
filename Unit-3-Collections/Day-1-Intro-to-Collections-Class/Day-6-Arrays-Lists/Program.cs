@@ -8,7 +8,8 @@ class Program
     static void Main(string[] args)
     {
         // Define an array to hold 5 numbers
-        int[] numbers = new int[3];  // numbers.Length=5; 4 is the largest allowable index
+        List<int> numbers = new List<int>(); // Empty List
+        // int [] numbers// numbers.Length=5; 4 is the largest allowable index
 
         // Define a variable to hold the sum of the numbers
         int sum = 0;
@@ -28,17 +29,21 @@ class Program
         //   index      loop as
         //   start      long as the index      increment the 
         //    at 0      is not outside array   index for each loop
-        for (int i=0; i < numbers.Length;      i++)  // i = 0, 1, 2 inside loop and 3 when exit loop
+        // for (int i=0; i < number.sLenght; i++
+        // Since our list starts off empty - we can't use. Count to control our loop
+        for (int i=0; i < 3;    i++)  // i = 0, 1, 2 inside loop and 3 when exit loop3
         {
             Console.WriteLine("Please enter a number:  "); // Asking for the number
-            numbers[i] = int.Parse(Console.ReadLine());    // get a string from keyboard
-                                                           // convert it toan int
+           //numbers[i] = int.Parse(Console.ReadLine());
+            numbers.Add(int.Parse(Console.ReadLine()));    // get a string from keyboard
+                                                           // convert it to an int
                                                            // store it in numbers[i]
+                                                           // store it in numbers List using .Add ()
         }
         
         // Verify the array received the numbers correctly
         // Go through the array one element at a time and display the element
-        for (int i=0; i < numbers.Length; i++) // i=0, 1, 2 
+        for (int i=0; i < numbers.Count; i++) // i=0, 1, 2 
         {
             Console.WriteLine("Element #"+ i + " is: " + numbers[i]);
             sum = sum + numbers[i]; // add the current number in the array to sum
@@ -51,7 +56,7 @@ class Program
         // divides the sum by the number of elements (arrayname.Length)
         
         // Note the cast of sum to a double so we get decimal places in the results
-        Console.WriteLine("The average of the numbers is: " +  (double) sum / (double) numbers.Length);
+        Console.WriteLine("The average of the numbers is: " +  (double) sum / (double) numbers.Count);
         
         //  sum / numbers.Length
         //  int / int ---> integer arithmetic - divide gives two parts quotient and remainder
