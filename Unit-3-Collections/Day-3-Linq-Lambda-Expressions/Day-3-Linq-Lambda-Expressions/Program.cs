@@ -74,6 +74,9 @@ internal class Program
                 starFleetPersonnel.Where(anEntry => anEntry.ToLower().Contains(searchString.ToLower()));
 
             // At this point the matchingEntries variable hold all List entries that match the condition
+            //.Where()  will add the current entry to matching Entries if constoion is true
+            // (.Where keeps an internal list of elements that match the condition
+            //      and assigns it to the variable to element
 
             Console.WriteLine(("\n" + matchingEntries.Count()) + " entries found matching \'" + searchString + "\'");
 
@@ -95,7 +98,10 @@ internal class Program
         // First() will throw an Exception if there is no match in the List
         //var theFirstOne = starFleetPersonnel.First(aLine => aLine.ToUpper().Contains(whatTheyWant.ToUpper()));
         var theFirstOne = starFleetPersonnel.FirstOrDefault(aLine => aLine.ToUpper().Contains(whatTheyWant.ToUpper()));
-
+        // Note use of String Interpoation to constuct the string for the write line
+        //      (Alternative to using + to make the string)
+        // $"words {variable}" - the value in the variable replaces the {variable} in the string
+        // '|n' new line in a string 
         Console.WriteLine($"\nThe first occurence of {whatTheyWant} is in: " + ((theFirstOne != null) ? theFirstOne : "None"));
 
 
