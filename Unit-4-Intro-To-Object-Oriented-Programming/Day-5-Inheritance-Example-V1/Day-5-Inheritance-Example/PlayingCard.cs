@@ -144,7 +144,15 @@ namespace Day_5_Inheritance_Example
         }
 
         // Equals returns true to data members of two objects are equal
-        public override bool Equals(object otherObject)
+        // Default Equals() only compares the contents of the reference variable (locations)
+        // If you want to compare the contents of the objects - Create an Equals() override
+        // The key word this represents the object used to invoke the method 
+        //
+        // In the class method               this represents the object to the left of the dot 
+        // To execute a class method: object.method(parameters)
+        //
+        //myCard.Equals(yourCard) --> this represents myCard and otherObject represents yourCard
+        public override bool Equals(object otherObject)// Note the parameter is a generic object type
         {
             if (otherObject.GetType() != this.GetType())  // If types differ...
             {
@@ -158,8 +166,9 @@ namespace Day_5_Inheritance_Example
 
             // Create a PlayingCard reference to generic object passed to method
             // so we can access the objects data members
-            PlayingCard otherCard = (PlayingCard) otherObject;
-
+            // (otherObject is defined as a generic Object - it must be a real Object to process)
+            PlayingCard otherCard = (PlayingCard) otherObject; 
+            
             if (otherCard.cardValue == this.cardValue     // if all data
                 && otherCard.cardSuit == this.cardSuit    //    members are equal
                 && otherCard.cardColor == this.cardColor) //      between the objects...
