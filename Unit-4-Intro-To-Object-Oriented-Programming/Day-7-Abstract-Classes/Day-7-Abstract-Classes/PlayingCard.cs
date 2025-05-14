@@ -5,10 +5,24 @@ using System.Collections.Generic;
 namespace Day_6_Abstract_Classes
 {
     // This is class to represent a simple PlayingCard
+    //
+    // Since this represents a generic playing card
+    // We can make it abstract - we won't allow generic Playing Cards to be created
+    // (It can only be used as a super class)
+    // 
     // It's in the same namespace as the application (for now and for simplicity)
     //
-
-    public class PlayingCard
+    // Adding the attribute abstract to a class makes it abstract
+    //
+    // Any generic methods must be changed from virtual to abstract
+    // (virtual mean a subclass MAY override the behavior of the method)
+    // virtual method provides default behavior in an inheritance hierarchy
+    // (abstract mean a subclass MUST override the behavior of the method)
+    //
+    // abstract means a subclass MUST provide a behavior for the method
+    // abstract method does nothing - abstract is indicating the subclass
+    //                                must provide the behavior
+    public abstract class PlayingCard
     {
     /*********************************************************************
      * Data members (attributes, properties, variables)
@@ -154,7 +168,9 @@ namespace Day_6_Abstract_Classes
             return CardValue * 17 + CardColor.GetHashCode() + CardSuit.GetHashCode();
         }
 
-        public virtual void ShowCard()
+        // Abstract method tells any subclass you must provide this behavior
+        // (abstract class doesn't define it)
+        public virtual void ShowCard() // no {} for the method body
         {
             Console.WriteLine(this);
         }
