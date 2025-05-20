@@ -22,6 +22,7 @@ public class PlayingCard
 
     public enum CardColor
     {  // define words to represent allowable card colors (instead of String)
+        // 0    1
         Black, Red                 // These are the only valid values C# will allow
     };
 
@@ -32,6 +33,7 @@ public class PlayingCard
 
     public enum CardValue
     {  // Using the fact that enums are really integers inside value to name our values
+        // 0    1    2     3      4    5     6     7      8      9    10   11     12    13    14
         Joker, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
     };
 
@@ -45,7 +47,7 @@ public class PlayingCard
      * 
      * static so it can be referenced using the class name. ie. no object required
      ***************************************************************************************************/
-
+//                             datatype  variable-name   = initial-value  ;
     protected static readonly CardValue DEFAULTCARDVALUE = CardValue.Joker;   // enum data-type for value
     protected static readonly CardColor DEFAULTCOLOR = CardColor.Black;
     protected static readonly CardSuit  DEFAULTSUIT = CardSuit.Joker;
