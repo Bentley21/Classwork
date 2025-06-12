@@ -4,9 +4,73 @@
                                   css rule;
                                   css rule;
                                 }
+
+selectors are: tag-name - all elements defines with this tag
+              #id= "" attributes - elements with the same id= "" - used for specific element
+              . - class="" attributes with the class="" - for a specific group of element                            
 */  
 /* for now we use html tags as selectors */
 
 html { /* style all the elements within the html tag */
     background-color: lightgoldenrodyellow;
+    font-size: 20px;
+    color: blue;
 }
+
+h2 { /* stle all the h2 tags */
+  color: green;
+}
+
+footer { /* stlye all the stuff in the footer */
+   color: red;     
+   margin-top: 50px;
+   font-size:10px;
+   text-align: center;
+  }
+
+  p { /* style all the paragraph tag content */
+    color: plum;
+    font-size: 12pt;
+  }
+
+  #p2 { /* style all elements with id="p2" */
+    color: orange;
+  }
+
+  div { /* style all the divs and everything in them */
+    background-color: brown;
+  }
+
+  #Youssef {
+    background-color: blue;
+  }
+
+  .normal { /* style all */
+    background-color: aquamarine;
+  }
+
+  /* style to <Ol> of students in class */
+  /* #studentList to reference it's id */
+  /* ol to specify all <ol> tags - this would all <ol> tags not just the one we want */
+#students {
+color: chocolate;  /* set the text color */
+font-style: italic;
+list-style: square;
+border-style: solid; /* Put a border around the element*/
+border-color: darkmagenta; /* Set the color of the border*/
+border-width: 5px; /* set the width of the border*/
+border-radius: 20px;
+}
+
+table { /* style all tables in the html*/
+  border: 2px solid black; /* set the border width type and color */
+
+
+}
+
+td { /* style all <td> tags in the html */
+ border: 1px dashed red;
+ width: 100px;
+ height: 100px;
+ text-align: center;
+}  
